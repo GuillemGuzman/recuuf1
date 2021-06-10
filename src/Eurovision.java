@@ -15,6 +15,7 @@ public class Eurovision {
         int[] puntuacions = new int[MAX_PAISOS];
 
         int comptadorPaisos = 0;
+        int respostapts = 0;
         boolean bucle1 = true;
 
         String nomPais;
@@ -43,6 +44,17 @@ public class Eurovision {
         llistaPaisos[comptadorPaisos] = "Norway";
         participant[comptadorPaisos] = true;
         comptadorPaisos++;
+
+        puntuacions[0] = 2;
+        puntuacions[1]= 15;
+        puntuacions[2]= 1;
+        puntuacions[3]= 2;
+        puntuacions[4]= 15;
+        puntuacions[5]= 5;
+        puntuacions[6]= 1;
+        puntuacions[7]= 6;
+        puntuacions[8]= 7;
+
 
         while (bucle1){
             System.out.println("################");
@@ -79,13 +91,42 @@ public class Eurovision {
                 case 2:
                     System.out.println("LLista de paisos participants: ");
                     for (int i= 0; i<comptadorPaisos; i++) {
-                        if (participant[i] = true) {
+                        if (participant[i]) {
                             System.out.println("#" + i + "-" + llistaPaisos[i] + " Actuació: si");
-                        } else if (participant[i]){
+                        } else if (!participant[i]){
                             System.out.println("#" + i + "-" + llistaPaisos[i] + " Actuació: no");
                         }
                     }
+                    break;
+                case 3:
+                    int fila = 0;
 
+                    System.out.println("Votacion, mínim 1 punt, màxim 2 punts. ");
+                    System.out.println("Llistat de paisos que han actuat:");
+                    for (int i =0; i<comptadorPaisos; i++){
+                        if (participant[i]){
+                            System.out.println("#" + i + "-" + llistaPaisos[i]);
+                        }
+                    }
+
+                    System.out.println("Ara vota el pais: "+ llistaPaisos[fila]);
+                    System.out.println("A quin pais vols votar?");
+                    System.out.println("Punts -> "+ puntuacions[fila] +" Al pais ->");
+                    respostapts=sc.nextInt();
+                    sc.nextLine();
+                    if (respostapts == puntuacions[fila]){
+                        System.out.println("Error al vot! o t'estas votant a tu mateix o a un pais no participant");
+                    }else {
+
+                    }
+                case 4:
+                    for (int i =0; i<comptadorPaisos; i++){
+                        if (participant[i]) {
+                            System.out.println("Ranking paisos");
+                            System.out.println("posicio " + i + "pais"+ llistaPaisos[i] +"punts"+ puntuacions[i]);
+
+                        }
+                    }
 
             }
         }
