@@ -81,7 +81,7 @@ public class Eurovision {
                     for (int i= 0; i<comptadorPaisos; i++) {
                         if (participant[i] = true) {
                             System.out.println("#" + i + "-" + llistaPaisos[i] + " Actuació: si");
-                        } else {
+                        } else if (participant[i]){
                             System.out.println("#" + i + "-" + llistaPaisos[i] + " Actuació: no");
                         }
                     }
